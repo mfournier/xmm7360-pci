@@ -1279,8 +1279,8 @@ static void xmm7360_tty_close(struct tty_struct *tty, struct file *filp)
 }
 
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 6, 0)
-static long int xmm7360_tty_write(struct tty_struct *tty,
-			     const unsigned char *buffer, long unsigned int count)
+static ssize_t xmm7360_tty_write(struct tty_struct *tty,
+			     const unsigned char *buffer, size_t count)
 #else
 static int xmm7360_tty_write(struct tty_struct *tty,
 			     const unsigned char *buffer, int count)
